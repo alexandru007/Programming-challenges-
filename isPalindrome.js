@@ -34,3 +34,32 @@ function isPalindrome(inputString){
     return false;
   return true;
 }
+
+//use an IIFE to test isPalindrome function
+(function IIFE(){
+
+  // input string and expected results
+  let testcases = {
+    "abb": true,
+    "abbb": false,
+    "cac": true,
+    "qqqBBBqqq": true,
+    "ksksks": false
+  };
+
+  // get all the keys
+  let allKeys = Object.keys(testcases);
+  
+  //for each key compare the return from isPalindrome with expected results
+  allKeys.forEach(function(item) {
+
+    if(testcases[item] == isPalindrome(item))
+      console.log("Test with input " + item + " - PASS");
+    else
+      console.log("Test with input " + item + " - FAIL");
+    });
+})();
+
+
+
+
