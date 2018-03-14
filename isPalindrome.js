@@ -1,3 +1,11 @@
+
+/*
+
+Write a funtion that accepts a string as an input and returns
+true if any permutation of the characters it contains forms a palindrome.
+
+*/
+
 function isPalindrome(inputString){
   
   let hashMap = {};
