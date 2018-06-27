@@ -20,18 +20,28 @@ function isBalanced(inputExp) {
 
     inputExpArray = inputExp.split(''); // convert the string to array of chars to use forEach method
     
-    inputExpArray.forEach(function(element) {
+    for (var i=0; i < inputExpArray.length; i++){
 
+      var element = inputExpArray[i];
         // if open bracket push to stack
-        if ("([{".includes(element))
-            stack.push(element);
-            
-        // if element is a closed bracket, pop from stack, 
-        // compare popped char with the current element and see if they form a pair
-        if(")]}".includes(element) && stack.length != 0)
-            return (element === pairs[stack.pop()]);
+        if ("([{".includes(element)){
+          stack.push(element);
+        }
+ 
+        // if element is a closed bracket and stack is empty not balanced
+        // if element is a closed bracket and popped element do not form a pair not balanced
+        if(")]}".includes(element)){
 
-    });
+          if (stack.length == 0){
+            return false;
+          }
+          
+          if (element != pairs[stack.pop()]) {
+            return false;
+          }
+            
+        }
+    }
 
     // lastly check if the stack is empty, if yes it is balanced
     return stack.length == 0;
