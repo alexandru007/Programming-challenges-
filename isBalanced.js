@@ -6,7 +6,6 @@
 // if nothing to pop not balanced
 // if stack is not empty by after looping over the whole string means not balanced
 
-// NOTE: pop() method removes the last element from array (stack)
 
 const pairs = {
     '(': ')',
@@ -20,7 +19,7 @@ function isBalanced(inputExp) {
 
     inputExpArray = inputExp.split(''); // convert the string to array of chars to use forEach method
     
-    for (var i=0; i < inputExpArray.length; i++){
+    for (var i = 0; i < inputExpArray.length; i++){
 
       var element = inputExpArray[i];
         // if open bracket push to stack
