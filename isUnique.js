@@ -14,18 +14,18 @@ function isUnique(str){
     if (str.length == 0 || str.length > (127 - 33))
         return false;
 
+    // for char 'A' with dev value 65, array will have the value of 1 at the index of 65
     let testArray = [];
 
     for (let i = 0; i < str.length; i++) {
 
+        // check if the char already is in array, if yes means there is a duplicate
         if(testArray[str.charCodeAt(i)] == 1)
             return false;
-        else
+        else // char is not in the array, mark it as 1
             testArray[str.charCodeAt(i)] = 1;
     }
     return true;
 }
 
 console.log(isUnique("aab"));
-
-//console.log("abc".charCodeAt(0));
